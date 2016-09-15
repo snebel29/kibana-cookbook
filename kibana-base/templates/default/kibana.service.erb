@@ -1,0 +1,18 @@
+[Unit]
+Description=Kibana-<%= node['kibana']['unit-name']%>-service
+ 
+[Service]
+Type=simple
+User=<%= node['kibana']['user'] %>
+Group=<%= node['kibana']['group'] %>
+# Load env vars from /etc/default/ and /etc/sysconfig/ if they exist.
+# Prefixing the path with '-' makes it try to load, but if the file doesn't
+# exist, it continues onward.
+EnvironmentFile=-/etc/default/kibana
+EnvironmentFile=-/etc/sysconfig/kibana
+ExecStart=<%= File.join(node['kibana']['install-dir'], 'bin', 'kibana') %> 
+Restart=always
+WorkingDirectory=<%= node['kibana']['install-dir'] %>
+
+[Install]
+WantedBy=multi-user.target
