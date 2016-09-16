@@ -1,5 +1,5 @@
 [Unit]
-Description=Kibana-<%= node['kibana']['unit-name']%>-service
+Description=Kibana-<%= node['kibana']['service_name']%>-service
  
 [Service]
 Type=simple
@@ -10,9 +10,9 @@ Group=<%= node['kibana']['group'] %>
 # exist, it continues onward.
 EnvironmentFile=-/etc/default/kibana
 EnvironmentFile=-/etc/sysconfig/kibana
-ExecStart=<%= File.join(node['kibana']['install-dir'], 'bin', 'kibana') %> 
+ExecStart=<%= File.join(node['kibana']['install_dir'], 'bin', 'kibana') %> 
 Restart=always
-WorkingDirectory=<%= node['kibana']['install-dir'] %>
+WorkingDirectory=<%= node['kibana']['install_dir'] %>
 
 [Install]
 WantedBy=multi-user.target
