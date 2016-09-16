@@ -1,7 +1,7 @@
 actions :install
 attribute :user, :kind_of => String
 
-provides :the_application
+provides :app
 
 def initialize(*args)
   super

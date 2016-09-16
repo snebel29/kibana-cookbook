@@ -1,5 +1,5 @@
-include_recipe "kibana-base"
+include_recipe "kibana"
 
-kibana-base_the_application do
+kibana_app do
   action :install
 end

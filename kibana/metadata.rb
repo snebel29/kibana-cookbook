@@ -1,4 +1,4 @@
-name             'kibana-base'
+name             'kibana'
 maintainer       'iacpl-operations'
 maintainer_email 'ProdEng@iacpublishinglabs.com'
 license          'All rights reserved'
